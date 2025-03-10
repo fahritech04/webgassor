@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Penyewa extends Model
+class Motor extends Model
 {
     use HasFactory;
 
@@ -15,9 +15,14 @@ class Penyewa extends Model
     {
         parent::boot();
 
-        static::created(function ($penyewa) {
-            $penyewa->restuid .= 'rent-'. $penyewa->id;
-            $penyewa->save();
+        static::created(function ($motor) {
+            $motor->mtruid .= 'mtr-' . $motor->id;
+            $motor->save();
         });
+    }
+
+    public function sewa()
+    {
+        return $this->hasMany(Sewa::class, 'sewa_id', 'id');
     }
 }
