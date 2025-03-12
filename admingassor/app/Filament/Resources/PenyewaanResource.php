@@ -21,6 +21,8 @@ class PenyewaanResource extends Resource
 
     protected static ?string $navigationLabel = 'Penyewaan';
 
+    protected static ?string $pluralModelLabel = 'Penyewaan';
+
     public static function form(Form $form): Form
     {
         return $form

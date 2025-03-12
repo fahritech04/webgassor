@@ -24,6 +24,8 @@ class PenyewaResource extends Resource
 
     protected static ?string $navigationGroup = 'Manajemen Data';
 
+    protected static ?string $pluralModelLabel = 'Data Penyewa';
+
     public static function form(Form $form): Form
     {
         return $form
