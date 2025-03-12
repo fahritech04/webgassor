@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KategorimotorController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DetailController;
+use App\Http\Controllers\DetailPesananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Route::get('/kategorimotor', [KategorimotorController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
+Route::get('/detailmotor', [DetailController::class, 'index']);
+Route::get('/detailpesanan', [DetailPesananController::class, 'index']);
