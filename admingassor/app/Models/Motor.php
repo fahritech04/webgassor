@@ -11,6 +11,10 @@ class Motor extends Model
 
     protected $guarded = ['id'];
 
+    protected $casts = [
+        'image_motor' => 'array',
+    ];
+
     public static function boot()
     {
         parent::boot();

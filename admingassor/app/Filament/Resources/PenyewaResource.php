@@ -12,27 +12,36 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\Radio;
 
 class PenyewaResource extends Resource
 {
     protected static ?string $model = Penyewa::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-building-storefront';
+
+    protected static ?string $navigationLabel = 'Data Penyewa';
+
+    protected static ?string $navigationGroup = 'Manajemen Data';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('no_identitas'),
-                Forms\Components\TextInput::make('nama_penyewa'),
-                Forms\Components\Select::make('gender')
+                Forms\Components\TextInput::make('no_identitas')
+                ->label('Nomor Identitas'),
+                Forms\Components\TextInput::make('nama_penyewa')
+                ->label('Nama Penyewa'),
+                Radio::make('gender')
+                ->label('Jenis Kelamin')
                 ->options([
-                    'laki-laki' => 'Laki-Laki',
-                    'perempuan' => 'Perempuan',
+                    'pria' => 'Pria',
+                    'wanita' => 'Wanita'
                 ]),
-                Forms\Components\TextInput::make('no_hp'),
-                Forms\Components\TextInput::make('alamat'),
-                Forms\Components\TextInput::make('restuid'),
+                Forms\Components\TextInput::make('no_hp')
+                ->label('Nomor Telepon'),
+                Forms\Components\TextInput::make('alamat')
+                ->label('Alamat'),
             ]);
     }
 
@@ -40,12 +49,18 @@ class PenyewaResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('no_identitas'),
-                Tables\Columns\TextColumn::make('nama_penyewa')->searchable(),
-                Tables\Columns\TextColumn::make('gender'),
-                Tables\Columns\TextColumn::make('no_hp'),
-                Tables\Columns\TextColumn::make('alamat'),
-                Tables\Columns\TextColumn::make('restuid')  ->sortable(),
+                Tables\Columns\TextColumn::make('restuid')
+                ->label('UID'),
+                Tables\Columns\TextColumn::make('no_identitas')
+                ->label('No. Identitas'),
+                Tables\Columns\TextColumn::make('nama_penyewa')
+                ->label('Nama'),
+                Tables\Columns\TextColumn::make('gender')
+                ->label('Jenis Kelamin'),
+                Tables\Columns\TextColumn::make('no_hp')
+                ->label('No. Telepon'),
+                Tables\Columns\TextColumn::make('alamat')
+                ->label('Alamat'),
             ])
             ->filters([
                 //
