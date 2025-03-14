@@ -59,8 +59,6 @@ class PenyewaanResource extends Resource
                 ->label('UID'),
                 Tables\Columns\TextColumn::make('penyewa_id')
                 ->label('ID Penyewa'),
-                Tables\Columns\TextColumn::make('penyewa_id')
-                ->label('ID Penyewa'),
                 Tables\Columns\TextColumn::make('motor_id')
                 ->label('ID Motor'),
                 Tables\Columns\TextColumn::make('tanggal_sewa')

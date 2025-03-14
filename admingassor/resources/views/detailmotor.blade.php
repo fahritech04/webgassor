@@ -1,22 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motor Detail</title>
-    <link href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700" rel="stylesheet">
-    @vite(['resources/css/detailmotor.css', 'resources/js/kategorimotor.js'])
+@extends('layouts.app')
 
-</head>
-<body>
+@section('title', 'Kategori Motor')
+
+@section('vendor-style')
+ <link rel="stylesheet" href="{{ asset('css/motor/detailmotor.css') }}">
+@endsection
+
+@section('page-style')
+@endsection
+
+@section('content')
     <div class="element-detail-motor">
         <div class="item-wrapper">
             <div class="item">
                 <div class="div">
-                    <img class="element" src="https://c.animaapp.com/m8653slo3c4TnY/img/element.svg" alt="Element">
+                    {{-- <img class="element" src="https://c.animaapp.com/m8653slo3c4TnY/img/element.svg" alt="Element"> --}}
                     <header class="header">
                         <img class="img" src="https://c.animaapp.com/m8653slo3c4TnY/img/icon-outline-close.svg" alt="Close">
-                        <img class="img" alt="">
                     </header>
                     <div class="image">
                         <div class="image-placeholder">
@@ -95,5 +95,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+@endsection

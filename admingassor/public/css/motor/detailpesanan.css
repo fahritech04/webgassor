@@ -1,0 +1,412 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Inter:400,500,600");
+
+:root {
+  --primary-950: rgba(236, 176, 9, 1);
+  --dark-900: rgba(15, 15, 15, 1);
+  --dark-800: rgba(75, 75, 75, 1);
+  --dark-500: rgba(179, 179, 179, 1);
+  --white-950: rgba(250, 250, 250, 1);
+  --dark-100: rgba(231, 231, 231, 1);
+  --white-900: rgba(255, 255, 255, 1);
+  --dark-50: rgba(237, 237, 237, 1);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.element-detail-pesanan {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.element-detail-pesanan .div {
+  background-color: var(--white-950);
+  width: 393px;
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.element-detail-pesanan .item {
+  display: flex;
+  flex-direction: column;
+  width: 393px;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  position: relative;
+  top: 80px;
+}
+
+.element-detail-pesanan .card {
+  display: flex;
+  width: 361px;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.element-detail-pesanan .image {
+  position: relative;
+  width: 126px;
+  height: 71px;
+  background-color: var(--dark-50);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.element-detail-pesanan .element {
+  position: absolute;
+  width: 80px;
+  height: 61px;
+  top: 8px;
+  left: 20px;
+  object-fit: cover;
+}
+
+.element-detail-pesanan .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.element-detail-pesanan .review {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.element-detail-pesanan .icon-bold-star {
+  position: relative;
+  width: 12px;
+  height: 12px;
+}
+
+.element-detail-pesanan .text-wrapper {
+  position: relative;
+  flex: 1;
+  height: 16px;
+  margin-top: -1px;
+  opacity: 0.4;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: #0f0f0f;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.element-detail-pesanan .text-wrapper-2 {
+  position: relative;
+  align-self: stretch;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  color: var(--dark-900);
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 21px;
+}
+
+.element-detail-pesanan .card-2 {
+  gap: 8px;
+  padding: 16px;
+  flex: 0 0 auto;
+  background-color: var(--dark-50);
+  display: flex;
+  align-items: center;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.element-detail-pesanan .profile-picture {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background-color: var(--dark-800);
+  border-radius: 360px;
+  overflow: hidden;
+}
+
+.element-detail-pesanan .icon-outline-user {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 10px;
+  left: 10px;
+}
+
+.element-detail-pesanan .text-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  position: relative;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.element-detail-pesanan .text-wrapper-3 {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  color: #0f0f0f;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 21px;
+}
+
+.element-detail-pesanan .text-wrapper-4 {
+  position: relative;
+  align-self: stretch;
+  opacity: 0.6;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: #0f0f0f;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+
+.element-detail-pesanan .icon {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  background-color: var(--white-950);
+  border-radius: 360px;
+}
+
+.element-detail-pesanan .img {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.element-detail-pesanan .item-2,
+.element-detail-pesanan .item-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: var(--white-950);
+  border-radius: 12px;
+  border: 1px solid #e7e7e7;
+}
+
+.element-detail-pesanan .text-wrapper-5 {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #0f0f0f;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 21px;
+}
+
+.element-detail-pesanan .item-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.element-detail-pesanan .item-4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.element-detail-pesanan .text-wrapper-6 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  opacity: 0.4;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: #0f0f0f;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 21px;
+  white-space: nowrap;
+}
+
+.element-detail-pesanan .text-wrapper-7 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #0f0f0f;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 21px;
+  white-space: nowrap;
+}
+
+.element-detail-pesanan .devider {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 1px;
+  object-fit: cover;
+}
+
+.element-detail-pesanan .card-list {
+  height: 32px;
+  gap: 12px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.element-detail-pesanan .title {
+  position: relative;
+  flex: 1;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: var(--dark-500);
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 21px;
+}
+
+.element-detail-pesanan .icon-linear-chevron {
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+
+.element-detail-pesanan .header {
+  /* display: flex;
+  width: 393px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--white-950);
+  box-shadow: 0px 8px 12px rgba(104, 59, 252, 0.05);
+  z-index: 1000; */
+
+  display: flex;
+  width: 361px;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  position: absolute;
+  top: 52px;
+  left: 16px;
+  background-color: var(--white-950);
+}
+
+.element-detail-pesanan .item-6 {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.element-detail-pesanan .placeholder {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #0f0f0f;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.element-detail-pesanan .button {
+  display: flex;
+  width: 361px;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 16px;
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #e6a43b;
+  border-radius: 14px;
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.element-detail-pesanan .placeholder-2 {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  color: #000000;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 21px;
+  white-space: nowrap;
+}

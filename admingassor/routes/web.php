@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KategorimotorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\PesanController;
 use App\Http\Controllers\DetailPesananController;
 
 /*
@@ -26,4 +27,5 @@ Route::get('/', function () {
 Route::get('/kategorimotor', [KategorimotorController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 Route::get('/detailmotor', [DetailController::class, 'index']);
+Route::get('/pesan', [PesanController::class, 'index']);
 Route::get('/detailpesanan', [DetailPesananController::class, 'index']);

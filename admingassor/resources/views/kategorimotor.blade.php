@@ -1,21 +1,23 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Motor Rental</title>
+@extends('layouts.app')
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+@section('title', 'Kategori Motor')
 
-    @vite(['resources/css/kategorimotor.css', 'resources/js/kategorimotor.js'])
-</head>
-<body>
+@section('vendor-style')
+ <link rel="stylesheet" href="{{ asset('css/motor/kategorimotor.css') }}">
+@endsection
+
+@section('page-style')
+@endsection
+
+@section('content')
     <div class="element-kategori-motor">
         <div class="div">
-            <header class="header">
+        <header class="header">
+            <a href="{{ url('/home') }}" style="color: inherit; text-decoration: none;">
                 <i class="fa-solid fa-chevron-left"></i>
-                <div class="placeholder-2">Kategori</div>
-            </header>
+            </a>
+            <div class="placeholder-2">Kategori</div>
+        </header>
             <div class="filter">
                 <div class="input-field">
                     <div class="item">
@@ -32,7 +34,7 @@
                     </div>
                     <div class="text">
                         <div class="review">
-                            <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star" style="color: #ECB009;"></i>
                             <div class="text-wrapper">{{ $motor['feature'] }}</div>
                         </div>
                         <div class="text-wrapper-2">{{ $motor['name'] }}</div>
@@ -46,5 +48,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+@endsection
