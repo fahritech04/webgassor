@@ -4,17 +4,16 @@ namespace App\Filament\Resources\MotorResource\Pages;
 
 use App\Filament\Resources\MotorResource;
 use Filament\Actions;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Resources\Pages\ViewRecord;
 
-class EditMotor extends EditRecord
+class ViewMotor extends ViewRecord
 {
     protected static string $resource = MotorResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\ViewAction::make(),
-            Actions\DeleteAction::make(),
+            Actions\EditAction::make(),
         ];
     }
 }

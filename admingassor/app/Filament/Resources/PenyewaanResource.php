@@ -12,6 +12,11 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Infolists\Components\Section;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
+use Filament\Infolists\Components\ImageEntry;
+
 
 class PenyewaanResource extends Resource
 {
@@ -71,12 +76,50 @@ class PenyewaanResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ]);
+    }
+
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                Section::make('Detail Transaksi')
+                    ->schema([
+                        TextEntry::make('sewa_uuid')->label('UID'),
+                        TextEntry::make('tanggal_sewa')->label('Tanggal Sewa')->dateTime(),
+                        TextEntry::make('tanggal_kembali')->label('Tanggal Kembali')->dateTime(),
+                        TextEntry::make('catatan')->label('Catatan'),
+                        TextEntry::make('total_biaya')->label('Total Bayar')->money('idr', true),
+                        TextEntry::make('status')->label('Status')
+                    ])->columns(2),
+
+                Section::make('Detail Motor')
+                    ->schema([
+                        TextEntry::make('motor.mtruid')->label('UID'),
+                        TextEntry::make('motor.nama')->label('Nama Motor'),
+                        TextEntry::make('motor.kategori')->label('Kategori'),
+                        TextEntry::make('motor.catatan')->label('Catatan Penjual'),
+                        TextEntry::make('motor.no_polisi')->label('Nomor Polisi'),
+                        TextEntry::make('motor.harga')->label('Harga Sewa')->money('idr', true),
+                        TextEntry::make('motor.status')->label('Status')
+                    ])->columns(2),
+
+                Section::make('Detail Penyewa')
+                    ->schema([
+                        TextEntry::make('penyewa.restuid')->label('UID'),
+                        TextEntry::make('penyewa.no_identitas')->label('No Identitas'),
+                        TextEntry::make('penyewa.nama_penyewa')->label('Nama'),
+                        TextEntry::make('penyewa.gender')->label('Gender'),
+                        TextEntry::make('penyewa.no_hp')->label('Nomor Telepon'),
+                        TextEntry::make('penyewa.alamat')->label('Alamat')
+                    ])->columns(2),
             ]);
     }
 
@@ -92,6 +135,7 @@ class PenyewaanResource extends Resource
         return [
             'index' => Pages\ListPenyewaans::route('/'),
             'create' => Pages\CreatePenyewaan::route('/create'),
+            'view' => Pages\ViewPenyewaan::route('/{record}'),
             'edit' => Pages\EditPenyewaan::route('/{record}/edit'),
         ];
     }

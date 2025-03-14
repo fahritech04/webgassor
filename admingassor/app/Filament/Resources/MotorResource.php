@@ -12,6 +12,10 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Infolists\Components\Section;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
+use Filament\Infolists\Components\ImageEntry;
 
 class MotorResource extends Resource
 {
@@ -70,7 +74,7 @@ class MotorResource extends Resource
                 Tables\Columns\TextColumn::make('kategori')
                 ->label('kategori Motor'),
                 Tables\Columns\TextColumn::make('harga')
-                ->label('Harga'),
+                ->label('Harga')->money('idr', true),
                 Tables\Columns\TextColumn::make('no_polisi')
                 ->label('No. Polisi'),
                 Tables\Columns\TextColumn::make('status')
@@ -80,12 +84,34 @@ class MotorResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ])
+            ->emptyStateActions([
+                Tables\Actions\CreateAction::make(),
+            ]);
+    }
+
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                Section::make('Detail Motor')
+                    ->schema([
+                        TextEntry::make('mtruid')->label('UID'),
+                        TextEntry::make('nama')->label('Nama Motor'),
+                        TextEntry::make('kategori')->label('Kategori'),
+                        TextEntry::make('catatan')->label('Catatan Penjual'),
+                        TextEntry::make('no_polisi')->label('Nomor Polisi'),
+                        TextEntry::make('harga')->money('idr', true)->label('Harga Sewa'),
+                        TextEntry::make('status')->label('Status'),
+                        ImageEntry::make('image_motor')->label('Gambar Motor'),
+                    ])->columns(2)
             ]);
     }
 
@@ -101,6 +127,7 @@ class MotorResource extends Resource
         return [
             'index' => Pages\ListMotors::route('/'),
             'create' => Pages\CreateMotor::route('/create'),
+            'view' => Pages\ViewMotor::route('/{record}'),
             'edit' => Pages\EditMotor::route('/{record}/edit'),
         ];
     }

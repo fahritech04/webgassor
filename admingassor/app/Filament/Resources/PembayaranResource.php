@@ -27,18 +27,12 @@ class PembayaranResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('sewa_uuid')
-                ->label('UID'),
-                Tables\Columns\TextColumn::make('penyewa_id')
-                ->label('ID Penyewa'),
-                Tables\Columns\TextColumn::make('motor_id')
-                ->label('ID Motor'),
-                Tables\Columns\TextColumn::make('tanggal_sewa')
-                ->label('Tanggal Sewa'),
-                Tables\Columns\TextColumn::make('tanggal_kembali')
-                ->label('Tanggal Kembali'),
-                Tables\Columns\TextColumn::make('total_biaya')
-                ->label('Total Bayar'),
+                Tables\Columns\TextColumn::make('sewa_uuid')->label('UID'),
+                Tables\Columns\TextColumn::make('penyewa_id')->label('ID Penyewa'),
+                Tables\Columns\TextColumn::make('motor_id')->label('ID Motor'),
+                Tables\Columns\TextColumn::make('tanggal_sewa')->label('Tanggal Sewa'),
+                Tables\Columns\TextColumn::make('tanggal_kembali')->label('Tanggal Kembali'),
+                Tables\Columns\TextColumn::make('total_biaya')->label('Total Bayar')->money('idr', true)
             ])
             ->filters([
                 //
